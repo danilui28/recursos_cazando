@@ -29,9 +29,9 @@ function graficarComida(){
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
-
-    ComidaX = canvas.width - anchoComida;
-    comidaY = canvas.height - altoComida;
+    
+    ComidaX = canvas.height - anchoComida;
+    ComidaY = canvas.width - altoComida;
 
     graficarGato()
     graficarComida()
