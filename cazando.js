@@ -73,6 +73,3 @@ function moverAbajo(){
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
 }
-
-
-iniciarJuego();
