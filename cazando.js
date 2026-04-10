@@ -5,6 +5,8 @@ let gatoX = 0;
 let gatoY = 0;
 const anchoGato = 50;
 const altoGato = 50;
+const LIMITE_X = canvas.width - anchoGato;
+const LIMITE_Y = canvas.height - altoGato;
 
 let ComidaX = 0;
 let ComidaY = 0;
@@ -41,28 +43,28 @@ document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
 
 function moverIzquierda(){
-    gatoX -= 10;
+    if (gatoX > 0) gatoX -= 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
 }
 
 function moverDerecha(){
-    gatoX += 10;
+    if (gatoX < LIMITE_X) gatoX += 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
 }
 
 function moverArriba(){
-    gatoY -= 10;
+    if (gatoY > 0) gatoY -= 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
 }
 
 function moverAbajo(){
-    gatoY += 10;
+    if (gatoY < LIMITE_Y) gatoY += 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
