@@ -35,13 +35,34 @@ function iniciarJuego(){
     graficarComida()
 }
 
-document.getElementById("btnArriba").onclick = () => mover("arriba");
-document.getElementById("btnAbajo").onclick = () => mover("abajo");
+document.getElementById("btnArriba").onclick = () => moverArriba();
+document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
-document.getElementById("btnDerecha").onclick = () => mover("derecha");
+document.getElementById("btnDerecha").onclick = () => moverDerecha();
 
 function moverIzquierda(){
     gatoX -= 10;
+    limpiarCanva()
+    graficarGato()
+    graficarComida()
+}
+
+function moverDerecha(){
+    gatoX += 10;
+    limpiarCanva()
+    graficarGato()
+    graficarComida()
+}
+
+function moverArriba(){
+    gatoY -= 10;
+    limpiarCanva()
+    graficarGato()
+    graficarComida()
+}
+
+function moverAbajo(){
+    gatoY += 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
