@@ -1,10 +1,6 @@
 let canvas = document.getElementById("juego");
 let ctx = canvas.getContext("2d");
-let btnArriba = document.getElementById("btnArriba");
-let btnAbajo = document.getElementById("btnAbajo");
-let btnDerecha = document.getElementById("btnDerecha");
-let btnIzquierda = document.getElementById("btnIzquierda");
-const VELOCIDAD = 15;
+const VELOCIDAD = 10;
 let gatoX = 0;
 let gatoY = 0;
 const anchoGato = 50;
@@ -31,7 +27,6 @@ function graficarComida(){
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
-
     graficarGato()
     graficarComida()
 }
@@ -41,7 +36,9 @@ if (direccion === "arriba") gatoY -= VELOCIDAD;
 if (direccion === "abajo") gatoY += VELOCIDAD;
 if (direccion === "izquierda") gatoX -= VELOCIDAD;
 if (direccion === "derecha") gatoX += VELOCIDAD;
+limpiarCanva()
 graficarGato()
+graficarComida()
 }
 
 document.getElementById("btnArriba").onclick = () => mover("arriba");
@@ -49,5 +46,8 @@ document.getElementById("btnAbajo").onclick = () => mover("abajo");
 document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
 document.getElementById("btnDerecha").onclick = () => mover("derecha");
 
+function limpiarCanva(){
+    ctx.clearRect(0,0,600,400)
+}
 
 iniciarJuego();
