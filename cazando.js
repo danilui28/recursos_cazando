@@ -1,6 +1,6 @@
-let canvas = document.getElementById("juego");
+let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
-const VELOCIDAD = 10;
+const VELOCIDAD = 15;
 let gatoX = 0;
 let gatoY = 0;
 const anchoGato = 50;
@@ -27,6 +27,10 @@ function graficarComida(){
 function iniciarJuego(){
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
+
+    ComidaX = canvas.width - anchoComida;
+    comidaY = canvas.height - altoComida;
+
     graficarGato()
     graficarComida()
 }
@@ -47,7 +51,11 @@ document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
 document.getElementById("btnDerecha").onclick = () => mover("derecha");
 
 function limpiarCanva(){
-    ctx.clearRect(0,0,600,400)
+    ctx.clearRect(0,0,canvas.width,canvas.height)
+}
+
+function detectarColision(){
+
 }
 
 iniciarJuego();
