@@ -35,27 +35,21 @@ function iniciarJuego(){
     graficarComida()
 }
 
-function mover(direccion) {
-if (direccion === "arriba") gatoY -= VELOCIDAD;
-if (direccion === "abajo") gatoY += VELOCIDAD;
-if (direccion === "izquierda") gatoX -= VELOCIDAD;
-if (direccion === "derecha") gatoX += VELOCIDAD;
-limpiarCanva()
-graficarGato()
-graficarComida()
-}
-
 document.getElementById("btnArriba").onclick = () => mover("arriba");
 document.getElementById("btnAbajo").onclick = () => mover("abajo");
-document.getElementById("btnIzquierda").onclick = () => mover("izquierda");
+document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => mover("derecha");
+
+function moverIzquierda(){
+    gatoX -= 10;
+    limpiarCanva()
+    graficarGato()
+    graficarComida()
+}
 
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
 }
 
-function detectarColision(){
-
-}
 
 iniciarJuego();
