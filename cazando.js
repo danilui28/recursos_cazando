@@ -15,17 +15,17 @@ let ComidaY = 0;
 const anchoComida = 30;
 const altoComida = 30;
 
-function graficar(x, y, alto, ancho, color){
+function graficarRectangulo(x, y, alto, ancho, color){
     ctx.fillStyle = color
     ctx.fillRect(x,y,ancho,alto)
 }
 
 function graficarGato(){
-    graficar(gatoX,gatoY,anchoGato,altoGato,"black")
+    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"black")
 }
 
 function graficarComida(){
-    graficar(ComidaX,ComidaY,anchoComida,altoComida,"yellow")
+    graficarRectangulo(ComidaX,ComidaY,anchoComida,altoComida,"yellow")
 }
 
 function iniciarJuego(){
