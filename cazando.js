@@ -86,6 +86,11 @@ function detectarColision(){
         gatoY < ComidaY + altoComida &&
         gatoY + altoGato > ComidaY
     ) {
-        alert("¡El gato se comió la comida! 😺🍗");
+        ComidaX = generarAleatorio(0, canvas.width - anchoComida);
+        ComidaY = generarAleatorio(0, canvas.height - altoComida);
+
+        limpiarCanva();
+        graficarGato();
+        graficarComida();
     }
 }
