@@ -45,6 +45,7 @@ document.getElementById("btnArriba").onclick = () => moverArriba();
 document.getElementById("btnAbajo").onclick = () => moverAbajo();
 document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
 document.getElementById("btnDerecha").onclick = () => moverDerecha();
+document.getElementById("btnReiniciar").onclick = () => reiniciar();
 
 function moverIzquierda(){
     if (gatoX > 0) gatoX -= 10;
@@ -82,7 +83,6 @@ function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
 }
 
-
 function detectarColision(){
         if (
         gatoX < ComidaX + anchoComida &&
@@ -98,9 +98,9 @@ function detectarColision(){
         limpiarCanva();
         graficarGato();
         graficarComida();
+        
     }
 }
-
 
 function sistemaPuntos(){
         puntaje = puntaje +1;
@@ -121,5 +121,26 @@ function restarTiempo(){
         alert("Game Over");
         clearInterval(intervalo);
     }
+}
+
+function reiniciar(){
+    clearInterval(intervalo);
+    intervalo = setInterval(restarTiempo, 1000);
+
+    puntaje = 0;
+    tiempo = 10;
+
+    gatoX = (canvas.width / 2) - (anchoGato / 2);
+    gatoY = (canvas.height / 2) - (altoGato / 2);
+
+    ComidaX = generarAleatorio(0, canvas.width - anchoComida);
+    ComidaY = generarAleatorio(0, canvas.height - altoComida);
+
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
 }
 
