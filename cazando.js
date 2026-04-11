@@ -2,6 +2,7 @@ let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 let puntaje = 0;
 let tiempo = 10;
+let intervalo;
 
 let gatoX = 0;
 let gatoY = 0;
@@ -37,7 +38,7 @@ function iniciarJuego(){
 
     graficarGato();
     graficarComida();
-    setInterval(restarTiempo, 1000);
+    intervalo = setInterval(restarTiempo, 1000);
 }
 
 document.getElementById("btnArriba").onclick = () => moverArriba();
@@ -105,10 +106,20 @@ function sistemaPuntos(){
         puntaje = puntaje +1;
         mostrarEnSpan("puntos",puntaje);
 
+        if (puntaje === 6){
+        alert("Ganaste");
+        clearInterval(intervalo);
+    }
+
 }
 
 function restarTiempo(){
-    tiempo = tiempo - 1;
-    mostrarEnSpan("tiempo",tiempo);
+    if (tiempo > 0){
+        tiempo=tiempo-1;
+        mostrarEnSpan("tiempo", tiempo);
+    } else {
+        alert("Game Over");
+        clearInterval(intervalo);
+    }
 }
 
