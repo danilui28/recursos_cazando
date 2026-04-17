@@ -1,42 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background: #bb3f3f;
   margin: 0;
-  padding: 20px;
-}
+  font-family: Arial, sans-serif;
+  background-color: #fff4b8;
+  height: 100vh;
 
-h1 {
-  margin-bottom: 5px;
-}
-
-.panel {
-  margin: 15px 0;
-  font-size: 18px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.contenedor-juego {
+  text-align: center;
+}
+
+/* Ventanas generales */
+.ventana {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Layout principal */
+.layout-principal {
+  display: flex;
   gap: 30px;
-}
-
-canvas {
-  background: white;
-  border: 2px solid black;
-}
-
-.controles {
   margin-top: 20px;
+  align-items: stretch; /* clave */
 }
 
+.layout-principal > .ventana,
+.layout-principal > .columna-derecha {
+  flex: 1;
+  display: flex;
+}
+
+.columna-derecha {
+  display: flex;
+}
+
+.ventana-derecha {
+  width: 100%;
+}
+
+/* Canvas */
+canvas {
+  background: #e6f7ff;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Columna derecha como bloque único */
+.columna-derecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido interno derecha */
+.ventana-derecha {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center;
+  gap: 25px;
+}
+
+/* Panel */
+.panel {
+  font-size: 18px;
+  display: flex;
+  gap: 25px;
+}
+
+/* Controles */
+.controles {
+  text-align: center;
+}
+
+/* Botones */
 button {
   margin: 5px;
   padding: 10px 16px;
   font-size: 18px;
   cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff9f43;
+  color: white;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 
 #mensaje {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  color: darkred;
-  margin-top: 15px;
+  color: #d63031;
 }

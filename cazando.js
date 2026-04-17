@@ -1,7 +1,7 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 let puntaje = 0;
-let tiempo = 10;
+let tiempo = 30;
 let intervalo;
 
 let gatoX = 0;
@@ -22,7 +22,7 @@ function graficarRectangulo(x, y, alto, ancho, color){
 }
 
 function graficarGato(){
-    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"black")
+    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"brown")
 }
 
 function graficarComida(){
@@ -128,7 +128,7 @@ function reiniciar(){
     intervalo = setInterval(restarTiempo, 1000);
 
     puntaje = 0;
-    tiempo = 10;
+    tiempo = 30;
 
     gatoX = (canvas.width / 2) - (anchoGato / 2);
     gatoY = (canvas.height / 2) - (altoGato / 2);
