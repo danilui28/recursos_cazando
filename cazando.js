@@ -22,11 +22,11 @@ function graficarRectangulo(x, y, alto, ancho, color){
 }
 
 function graficarGato(){
-    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"brown")
+    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"blue")
 }
 
 function graficarComida(){
-    graficarRectangulo(ComidaX,ComidaY,anchoComida,altoComida,"yellow")
+    graficarRectangulo(ComidaX,ComidaY,anchoComida,altoComida,"red")
 }
 
 function iniciarJuego(){
@@ -48,14 +48,6 @@ document.getElementById("btnDerecha").onclick = () => moverDerecha();
 document.getElementById("btnReiniciar").onclick = () => reiniciar();
 
 function moverIzquierda(){
-    if (gatoX > 0) gatoX -= 10;
-    limpiarCanva()
-    graficarGato()
-    graficarComida()
-    detectarColision()
-}
-
-function moverDerecha(){
     if (gatoX < LIMITE_X) gatoX += 10;
     limpiarCanva()
     graficarGato()
@@ -63,8 +55,16 @@ function moverDerecha(){
     detectarColision()
 }
 
+function moverDerecha(){
+    if (gatoX > 0) gatoX -= 10;
+    limpiarCanva()
+    graficarGato()
+    graficarComida()
+    detectarColision()
+}
+
 function moverArriba(){
-    if (gatoY > 0) gatoY -= 10;
+    if (gatoY < LIMITE_Y) gatoY += 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
@@ -72,7 +72,7 @@ function moverArriba(){
 }
 
 function moverAbajo(){
-    if (gatoY < LIMITE_Y) gatoY += 10;
+    if (gatoY > 0) gatoY -= 10;
     limpiarCanva()
     graficarGato()
     graficarComida()
@@ -118,7 +118,7 @@ function restarTiempo(){
         tiempo=tiempo-1;
         mostrarEnSpan("tiempo", tiempo);
     } else {
-        alert("Game Over");
+        alert("Juego Terminado");
         clearInterval(intervalo);
     }
 }
