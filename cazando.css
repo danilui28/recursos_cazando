@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #fff4b8;
+  background: url(fondo.jpg) no-repeat center center/cover;
   height: 100vh;
 
   display: flex;
