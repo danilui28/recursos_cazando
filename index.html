@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css">
+</head>
+<body onload="iniciarJuego()">
+
+  <div class="contenedor-juego">
+
+    <!-- Ventana Título -->
+    <div class="ventana ventana-titulo">
+      <h1>Juego Cazando</h1>
+      <p>Autor: Luis David</p>
+    </div>
+
+    <!-- Layout principal -->
+    <div class="layout-principal">
+
+      <!-- Columna izquierda -->
+      <div class="ventana ventana-canvas">
+        <canvas id="areaJuego" width="500" height="500"></canvas>
+      </div>
+
+      <!-- Columna derecha -->
+<div class="columna-derecha">
+  <div class="ventana ventana-derecha">
+
+    <div class="panel">
+      <span>Puntos: <span id="puntos">0</span></span>
+      <span>Tiempo: <span id="tiempo">30</span></span>
+    </div>
+
+    <div class="controles">
+      <button id="btnArriba">⬆</button><br>
+      <button id="btnIzquierda">⬅</button>
+      <button id="btnAbajo">⬇</button>
+      <button id="btnDerecha">➡</button>
+    </div>
+
+    <p id="mensaje"></p>
+    <button id="btnReiniciar">Reiniciar</button>
+
+  </div>
+</div>
+    </div>
+
+  </div>
+
+  <script src="cazando.js"></script>
+  <script src="utils.js"></script>
+
+</body>
