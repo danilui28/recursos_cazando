@@ -6,10 +6,12 @@ let intervalo;
 
 let gatoX = 0;
 let gatoY = 0;
-const anchoGato = 50;
-const altoGato = 50;
+const anchoGato = 80;
+const altoGato = 80;
 const LIMITE_X = canvas.width - anchoGato;
 const LIMITE_Y = canvas.height - altoGato;
+let imagenGato = new Image();
+imagenGato.src = "gato.png";
 
 let ComidaX = 0;
 let ComidaY = 0;
@@ -22,7 +24,7 @@ function graficarRectangulo(x, y, alto, ancho, color){
 }
 
 function graficarGato(){
-    graficarRectangulo(gatoX,gatoY,anchoGato,altoGato,"blue")
+    ctx.drawImage(imagenGato, gatoX, gatoY, anchoGato, altoGato);
 }
 
 function graficarComida(){
