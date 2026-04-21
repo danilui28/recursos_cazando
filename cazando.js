@@ -15,8 +15,10 @@ imagenGato.src = "gato.png";
 
 let ComidaX = 0;
 let ComidaY = 0;
-const anchoComida = 30;
-const altoComida = 30;
+const anchoComida = 60;
+const altoComida = 60;
+let imagenPescado = new Image();
+imagenPescado.src = "pescado.png";
 
 function graficarRectangulo(x, y, alto, ancho, color){
     ctx.fillStyle = color
@@ -28,7 +30,7 @@ function graficarGato(){
 }
 
 function graficarComida(){
-    graficarRectangulo(ComidaX,ComidaY,anchoComida,altoComida,"red")
+    ctx.drawImage(imagenPescado, ComidaX, ComidaY, anchoComida, altoComida);
 }
 
 function iniciarJuego(){
