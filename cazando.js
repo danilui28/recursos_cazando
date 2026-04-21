@@ -95,8 +95,6 @@ function detectarColision(){
         ComidaX = generarAleatorio(0, canvas.width - anchoComida);
         ComidaY = generarAleatorio(0, canvas.height - altoComida);
 
-        tiempo = 15
-
         limpiarCanva();
         graficarGato();
         graficarComida();
