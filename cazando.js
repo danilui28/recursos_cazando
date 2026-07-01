@@ -6,8 +6,8 @@ let intervalo;
 
 let gatoX = 0;
 let gatoY = 0;
-const anchoGato = 80;
-const altoGato = 80;
+const anchoGato = 90;
+const altoGato = 90;
 const LIMITE_X = canvas.width - anchoGato;
 const LIMITE_Y = canvas.height - altoGato;
 let imagenGato = new Image();
@@ -15,8 +15,8 @@ imagenGato.src = "gato.png";
 
 let ComidaX = 0;
 let ComidaY = 0;
-const anchoComida = 60;
-const altoComida = 60;
+const anchoComida = 70;
+const altoComida = 70;
 let imagenPescado = new Image();
 imagenPescado.src = "pescado.png";
 
